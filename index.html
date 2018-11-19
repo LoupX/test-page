@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+#videoLoop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#btnPause {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#btnPause:hover {
+    background: #ddd;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+  <video autoplay loop id="videoLoop">
+    <source src="https://josevargas.online/nyanCat.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="content">
+    <h1>Hello!</h1>
+    <p>I've not yet found that fantastic topic to create my full page, meanwhile you can send me an e-mail to
+      <a href="mailto:hi@josevargas.online?Subject=Contact%20from%20your%20site" target="_top">hi@josevargas.online</a>.</p>
+    <button id="btnPause" onclick="pauseVideo()">
+      Pause
+    </button>
+
+    <button id="btnPause" onclick="location.href='/resume'">
+  Go to my Resume</button>
+</div>
+
+    <script>
+      var video = document.getElementById("videoLoop");
+      var btn=document.getElementById("btnPause"); 
+      
+      function pauseVideo(){ 
+        if (video.paused){
+          video.play(); btn.innerHTML = "Pause";
+          }
+        else { 
+          video.pause(); btn.innerHTML = "Play"; 
+          } 
+      } 
+    </script> 
+  </body>
+</html>
